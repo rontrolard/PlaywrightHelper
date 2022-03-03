@@ -10,6 +10,15 @@
   <Design.DataContext>
     <viewModels:MainViewModel />
   </Design.DataContext>
-
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+  <RelativePanel>
+      <TextBlock Text="Choose a saved script" RelativePanel.Above="SavedScripts"></TextBlock>
+      <Button Name="RecorderButton">Record a new script</Button>
+      <TreeView Name="SavedScripts" Items="{Binding ScriptSource}">
+        <TreeView.DataTemplates>
+          <TreeDataTemplate DataType="viewModels:FileDisplay" ItemsSource="{Binding Children}">
+            <TextBlock Text="{Binding Display}"></TextBlock>
+          </TreeDataTemplate>
+        </TreeView.DataTemplates>
+      </TreeView>
+  </RelativePanel>
 </UserControl>
