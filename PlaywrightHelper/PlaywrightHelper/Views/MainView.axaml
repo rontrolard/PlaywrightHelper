@@ -10,9 +10,10 @@
   <Design.DataContext>
     <viewModels:MainViewModel />
   </Design.DataContext>
+  
   <RelativePanel>
       <TextBlock Text="Choose a saved script" RelativePanel.Above="SavedScripts"></TextBlock>
-      <Button Name="RecorderButton">Record a new script</Button>
+      <Button Name="RecorderButton" Command="{Binding RecordingStarted}">Record a new script</Button>
       <TreeView Name="SavedScripts" Items="{Binding ScriptSource}">
         <TreeView.DataTemplates>
           <TreeDataTemplate DataType="viewModels:FileDisplay" ItemsSource="{Binding Children}">
