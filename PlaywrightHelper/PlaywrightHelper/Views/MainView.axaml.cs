@@ -8,6 +8,7 @@ namespace PlaywrightHelper.Views
         public MainView()
         {
             InitializeComponent();
+            TextEditor.Text = "THIS IS A TEST!!";
         }
 
     }
